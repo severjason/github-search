@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+    --background: #F9FAFB;
+    --foreground: #171717;
+}
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif,  'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --font-secondary: "BLMelody", sans-serif;
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-primary-50:  #FFFBEA;
+    --color-primary-100: #FEF3C6;
+    --color-primary-200: #FDE585;
+    --color-primary-300: #FFD22F;
+    --color-primary-400: #FFB900;
+    --color-primary-500: #F59D0E;
+    --color-primary-600: #E17100;
+    --color-primary-700: #BA4C00;
+    --color-primary-800: #963B00;
+    --color-primary-900: #7A3206;
+    --color-primary-950: #451901;
+
+    --color-secondary-50:  #FAFBFC;
+    --color-secondary-100: #F0F1F3;
+    --color-secondary-200: #E1E1E1;
+    --color-secondary-300: #DADCE2;
+    --color-secondary-400: #AAB0B7;
+    --color-secondary-500: #9DA4B2;
+    --color-secondary-600: #677289;
+    --color-secondary-700: #5C616F;
+    --color-secondary-800: #474D58;
+    --color-secondary-900: #333742;
+    --color-secondary-950: #1A1A1A;
+}
+
+@layer components {
+    .border,
+    .border-r,
+    .border-l,
+    .border-t,
+    .border-b,
+    .border-x,
+    .border-y {
+        border-color: var(--color-secondary-200);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #F9FAFB;
+        --foreground: #171717;
+    }
+}
+
+body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Inter, Helvetica, sans-serif;
+}
+
