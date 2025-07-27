@@ -3,8 +3,8 @@ import clsx from 'clsx';
 
 export const baseButtonStyles = clsx(
   'inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium ',
-  'tracking-tightest shrink-0  transition-all hover:cursor-pointer  transition-all',
-  'focus-visible:ring-blue-600/25 focus:outline-none focus-visible:ring-2 focus-visible:border-blue-600',
+  'shrink-0  transition-all hover:cursor-pointer',
+  'focus-visible:ring-primary-600/25 focus:outline-none focus-visible:ring-2 focus-visible:border-primary-600',
   'disabled:pointer-events-none disabled:opacity-50',
   'border',
 );

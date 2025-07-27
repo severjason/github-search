@@ -2,13 +2,13 @@ import type { PaginatedResponse, PaginationParams } from 'src/interfaces/general
 
 type SearchSortType = 'stars' | 'forks' | 'help-wanted-issues' | 'updated';
 
-export type SearchRepositoriesParams = PaginationParams & {
+export interface SearchRepositoriesParams extends PaginationParams {
   sort?: SearchSortType;
-};
+}
 
 export type SearchRepositoriesResponse = PaginatedResponse<Repository>;
 
-type RepositoryOwner = {
+interface RepositoryOwner {
   login: string;
   id: number;
   node_id: string;
@@ -27,18 +27,18 @@ type RepositoryOwner = {
   repos_url: string;
   events_url: string;
   site_admin: boolean;
-};
+}
 
-type RepositoryLisense = {
+interface RepositoryLisense {
   key: string;
   name: string;
   url: string;
   spdx_id: string;
   node_id: string;
   html_url: string;
-};
+}
 
-type Repository = {
+export interface Repository {
   id: number;
   node_id: string;
   name: string;
@@ -75,4 +75,4 @@ type Repository = {
   score: number;
   lisense: RepositoryLisense;
   // did not write full interface as it was not needed
-};
+}

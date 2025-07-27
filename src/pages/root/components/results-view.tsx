@@ -28,11 +28,9 @@ export const ResultsView = () => {
         <div className={'w-full grid grid-cols-1 gap-4'}>
           {items?.map((item, index) => (
             <Buttons.Link
+              state={getQuery()}
               key={item.id}
-              to={generatePath(APP_ROUTES.repositoryDetails.path, {
-                owner: item.owner.id.toString(),
-                repoId: item.id.toString(),
-              })}
+              to={generatePath(APP_ROUTES.repositoryDetails.path, { ownerName: item.owner.login, repoName: item.name })}
             >
               <ItemCard item={item} index={index} onVisibilityChange={onVisibilityChange} />
             </Buttons.Link>

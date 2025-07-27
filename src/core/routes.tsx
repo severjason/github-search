@@ -1,4 +1,5 @@
 import { NotFound } from 'src/components';
+import { RepoDetailsPage } from 'src/pages/repo-details';
 import { RootPage } from 'src/pages/root';
 
 export const APP_ROUTES = {
@@ -7,8 +8,8 @@ export const APP_ROUTES = {
     element: <RootPage />,
   },
   repositoryDetails: {
-    path: '/:owner/:repoId',
-    element: <div>Placeholer</div>,
+    path: '/:ownerName/:repoName',
+    element: <RepoDetailsPage />,
   },
   notFound: {
     path: '*',

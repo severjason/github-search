@@ -8,16 +8,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "tscheck": "tsc --pretty --noEmit --skipLibCheck",
+    "tscheck": "tsc -p ./tsconfig.app.json --pretty --noEmit --skipLibCheck",
     "format": "prettier --write",
     "preview": "vite preview",
     "prepare": "husky"
-  },
-  "lint-staged": {
-    "*.@(ts|tsx)": [
-      "npm run lint",
-      "npm run format"
-    ]
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.1.7",

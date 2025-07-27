@@ -1,69 +1,60 @@
-# React + TypeScript + Vite
+# Github repository search
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Development
 
-Currently, two official plugins are available:
+1. Install dependencies - run `npm run install` from _root_ dir:
+   ```sh
+   npm run install
+   ```
+2. Start development server:
+   ```sh
+   npm run dev
+   ```
+3. Build app:
+   ```sh
+   npm run  build
+   ```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
 
-## Expanding the ESLint configuration
+## Deployed app
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Please follow this [link](https://github-search-fawn.vercel.app)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Core - React, Tailwind, TanStack Query
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Primitive components - @radix-ui.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.mjs22
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Scripts
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Script    | Description                      |
+|-----------|----------------------------------|
+| `dev`     | start server in development mode |
+| `build`   | build app                        |
+| `lint`    | run eslint                       |
+| `tscheck` | run typescript types checking    |
+| `format`  | run prettier                     |
+| `preview` | started built app                |
+| `prepare` | husky install                    |
+
+
+
+## Environment variables
+
+| VAR                        | Description                             |
+|----------------------------|-----------------------------------------|
+| `VITE_API_URL`             | github api url (https://api.github.com) |
+| `VITE_GITHUB_ACCESS_TOKEN` | github token to handle api limitations  |
+
+
+## Additional info
+TanStack Query used here as a library for API calls and as a state manager instead of Redux.
+
+
+## Possible improvements
+1. Adding tests with React-testing-library.
+2. Add virtualization for repositories list
+3. Filtering/sorting.

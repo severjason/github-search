@@ -1,4 +1,4 @@
-import React, {type FC, type FormEventHandler } from 'react';
+import React, { type FC, type FormEventHandler } from 'react';
 
 import clsx from 'clsx';
 

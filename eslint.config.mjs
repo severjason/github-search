@@ -1,12 +1,11 @@
 import js from '@eslint/js';
-import globals from 'globals';
+import pluginQuery from '@tanstack/eslint-plugin-query';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
+import globals from 'globals';
 import tseslint from 'typescript-eslint';
-import pluginQuery from '@tanstack/eslint-plugin-query'
-import react from "eslint-plugin-react";
-
-const eslintPluginPrettierRecommended = require('eslint-plugin-prettier/recommended');
 
 export default tseslint.config([
   { files: ['**/*.{js,jsx,mjs,ts,tsx}'] },
@@ -57,4 +56,4 @@ export default tseslint.config([
     ignores: ['node_modules'],
   },
   eslintPluginPrettierRecommended,
-])
+]);
